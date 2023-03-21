@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int nilai [10]={3,7,10,15,18,29,32,37,40,87};
+	for (int z=0; z<10; z++){
+		cout<<nilai[z]<<" ";
+	}
+	int cari;
+	cout <<"\nMasukan nilai yang anda cari : ";
+	cin>>cari;
+	int left,mid,right,indicator=0;
+	left=0; right=10-1;
+	while(indicator==0 && left<=right){
+		mid=(left+right)/2;
+		if(nilai[mid]==cari){
+			indicator=1;
+			break;
+		}
+		else if(nilai[mid]<cari){
+			left=mid+1;
+		}
+		else {
+			right=mid-1;
+		}
+	}
+	if(indicator==1){
+		cout <<"\nNilai yang ditemukan pada index ke : " <<mid<<endl;
+	}
+	else {
+		cout <<"\ndata tidak ditemukan";
+	}
+}
